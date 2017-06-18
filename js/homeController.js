@@ -62,8 +62,8 @@ define([], function() {
     / This part is just so the tabs work and stuff for their ng-classes so they appear correctly
     */
     $scope.artistsShow = true;   $scope.tracksShow = false; $scope.artistsTab = "active";   $scope.tracksTab = ""; $scope.showHelp = false;
-    $scope.showArtists = function(){$scope.artistsShow = true; $scope.tracksShow = false; $scope.tracksTab = ""; $scope.artistsTab = "active";}
-    $scope.showTracks = function(){$scope.artistsShow = false; $scope.tracksShow = true; $scope.tracksTab = "active"; $scope.artistsTab = "";}
+    $scope.showArtists = function(){$scope.artistsShow = true; $scope.tracksShow = false; $scope.tracksTab = ""; $scope.artistsTab = "active";};
+    $scope.showTracks = function(){$scope.artistsShow = false; $scope.tracksShow = true; $scope.tracksTab = "active"; $scope.artistsTab = "";};
 
     var getProfile = function($location){
   		$http({
@@ -113,7 +113,7 @@ define([], function() {
      }, function myError(response) {
          console.log(response);
      });
-   }
+   };
 
     var getShortTermArtists = function(){
   		$http({
@@ -163,7 +163,7 @@ define([], function() {
 
 
   		}, function myError(response) {
-          console.log("short-term artist error")
+          console.log("short-term artist error");
       });
   	}
 
@@ -232,7 +232,7 @@ define([], function() {
         getLongTermTracks();
 
   		}, function myError(response) {
-          console.log("long-term artist error")
+          console.log("long-term artist error");
       });
   	}
 
@@ -248,7 +248,7 @@ define([], function() {
         //console.log(response);
         for(var i = 0; i < response.data.items.length; i++){
             $scope.short_term_track_popularity.push(findStarRating(response.data.items[i].popularity));
-            short_term_ids.push(response.data.items[i].id)
+            short_term_ids.push(response.data.items[i].id);
         }
         $scope.short_term_tracks = response.data.items;
         getShortTermTrackAnalysis();
@@ -270,7 +270,7 @@ define([], function() {
         //console.log(response);
         for(var i = 0; i < response.data.items.length; i++){
             $scope.long_term_track_popularity.push(findStarRating(response.data.items[i].popularity));
-            long_term_ids.push(response.data.items[i].id)
+            long_term_ids.push(response.data.items[i].id);
         }
         $scope.long_term_tracks = response.data.items;
         getLongTermTrackAnalysis();
@@ -426,7 +426,7 @@ define([], function() {
      }, function myError(response) {
          console.log(response);
      });
-   }
+   };
 
    /*
    / This function gets the number of users that got every score.
@@ -582,7 +582,7 @@ define([], function() {
           alert("Playlist created, give Spotify a little time to update!");
   			});
   		});
-    }
+    };
 
     $scope.makeSixWeekPlaylist = function(){
   		var dateObj = new Date();
@@ -618,7 +618,7 @@ define([], function() {
           alert("Playlist created, give Spotify a little time to update!");
   			});
   		});
-    }
+    };
 
     /*
     / Simply posts all the following data to the database. Should be called after
@@ -653,7 +653,7 @@ define([], function() {
      }, function myError(response) {
          console.log(response);
      });
-   }
+   };
 
    var getHistory = function() {
       $http({
@@ -667,7 +667,7 @@ define([], function() {
       }, function myError(response) {
           console.log(response);
       });
-   }
+   };
 
 
     /*
@@ -690,7 +690,7 @@ define([], function() {
         else if(rating >= 50){ return "★★";  }
         else if(rating >= 35){ return "★"; }
         else{ return ""; }
-    }
+    };
     function Comparator(a, b) {
      if (a[1] > b[1]) return -1;
      if (a[1] < b[1]) return 1;

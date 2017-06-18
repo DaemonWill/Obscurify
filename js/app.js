@@ -190,7 +190,7 @@ app.post('/postData',function(req,res){
            'acousticness' : acousticness,
            'danceability' : danceability
       }
-    }
+    };
 
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -207,7 +207,7 @@ app.post('/getData',function(req,res){
     var options = {
       url: 'http://obscurifymusic.com/php/getData.php',
       method: 'POST'
-    }
+    };
 
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -223,7 +223,7 @@ app.get('/getScores',function(req,res){
     var options = {
       url: 'http://obscurifymusic.com/php/getScores.php',
       method: 'GET'
-    }
+    };
 
     // Start the request
     request(options, function (error, response, body) {
@@ -241,7 +241,7 @@ app.get('/getTopArtists',function(req,res){
     var options = {
       url: 'http://obscurifymusic.com/php/getTopArtists.php',
       method: 'GET'
-    }
+    };
 
     // Start the request
     request(options, function (error, response, body) {
@@ -259,7 +259,7 @@ app.get('/getCountryUserCounts',function(req,res){
     var options = {
       url: 'http://obscurifymusic.com/php/getCountryUserCounts.php',
       method: 'GET'
-    }
+    };
 
     // Start the request
     request(options, function (error, response, body) {
@@ -281,7 +281,7 @@ app.post('/getHistory',function(req,res){
       form: {
         'user_id': user_id
       }
-    }
+    };
     // Start the request
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -310,7 +310,7 @@ app.post('/postHistory',function(req,res){
             'end_month' : end_month,
             'year' : year
       }
-    }
+    };
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             res.send(response);
